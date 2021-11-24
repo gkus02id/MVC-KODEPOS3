@@ -1,0 +1,14 @@
+﻿<div class="subremodal-form-group-popup">
+    <label class="custom-popup-label-group">Kabupaten</label>
+    <div class="custom-popup-input-group">
+        <input id="nama" class="form-control" data-mandatory="true" dataType="string" maxlength="200" validation-string="Propinsi" name="NAMA" value="@ViewBag.description">
+        <div class="nama validation-result" style="display: none;"></div>
+    </div>
+</div>
+<div class="subremodal-form-group-popup">
+    <label class="custom-popup-label-group">Propinsi</label>
+    <div class="custom-popup-input-group">
+        <input id="propinsi_name_read" class="form-control" dataType="string" maxlength="200" validation-string="Propinsi Name" name="PROPINSI_NAME_READ" value="@ViewBag.propinsi" readonly nosave>
+    </div>
+</div>
+<input type="hidden" name="AUTONUMBER_TMP" id="AUTONUMBER_TMP" value="@ViewBag.autonumber" nosave />

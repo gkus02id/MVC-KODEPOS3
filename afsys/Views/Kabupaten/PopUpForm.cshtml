@@ -1,0 +1,148 @@
+﻿<form role="form" method="POST" id="kabupatenPopupForm" mode="@ViewBag.modify_status" onsubmit="event.preventDefault();">
+    <div class="form-group-popup-header">
+        <label class="popup-label-group-title">Kabupaten Form</label>
+        <input type="hidden" name="AUTONUMBER" id="AUTONUMBER" dataType="autonumber" dataKey="1" value="@ViewBag.autonumber" />
+        <input type="hidden" dataType="string" dataKey="0" name="POPUP_OBJECT_ID" value="kabupaten" nosave />
+        <input type="hidden" dataType="string" dataKey="0" name="POPUP_TOP_OBJECT_ID" value="kodepos" nosave />
+        <input type="hidden" dataType="string" dataKey="0" name="POPUP_TOP_FIELD_NAME" value="KABUPATEN_ID" nosave />
+        <input type="hidden" dataType="string" dataKey="0" name="PROPINSI_ID" value="@ViewBag.propinsiId" />
+        <input type="hidden" dataType="string" dataKey="0" name="PROPINSI_NAME" value="@ViewBag.propinsi" nosave />
+    </div>
+    <div class="form-content-group-popup">
+        <div class="form-content-group-popup-detail">
+            <div class="col-lg-6 left-popup-section" id="formkabupaten-content">
+                <div class="subremodal-form-group-popup">
+                    <label class="custom-popup-label-group">Kabupaten</label>
+                    <div class="custom-popup-input-group">
+                        <input id="nama" next-el="remodal-confirm" class="form-control" data-mandatory="true" dataType="string" maxlength="200" validation-string="Kabupaten" name="NAMA" value="@ViewBag.nama">
+                    </div>
+                </div>
+                <div class="subremodal-form-group-popup">
+                    <label class="custom-popup-label-group">Propinsi</label>
+                    <div class="custom-popup-input-group">
+                        <input id="propinsi_name_read" class="form-control" dataType="string" maxlength="200" validation-string="Propinsi Name" name="PROPINSI_NAME_READ" value="@ViewBag.propinsi" readonly nosave>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 right-popup-section">
+                <div class="panel-body list-container" id="listDataTable">
+                    @Html.Raw(ViewBag.listData)
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group-popup-footer">
+        <input type="hidden" dataType="string" name="MODIFY_STATUS" value="@ViewBag.modify_status" nosave>
+        <!--
+        <button id="subremodal-new" class="subremodal-confirm">New</button>
+        //-->
+        <button data-subremodal-action="confirm" id="subremodal-confirm" class="subremodal-confirm">SIMPAN</button>
+        <button data-subremodal-action="cancel" id="subremodal-cancel" class="subremodal-cancel">TUTUP</button>
+        <button id="remodal-end" class="remodal-end"></button>
+    </div>
+</form>
+<style>
+    <!--
+    .subremodal {
+        width: 1400px !important;
+    }
+
+    td.DTCOL_KABUPATEN { 
+        text-align: left;
+    }
+
+    .subremodal-wrapper {
+        top: -5%;
+    }
+
+    .left-popup-section {
+        border: 5px solid #206294;
+        min-height: 400px;
+        min-height: 400px;
+        padding-top: 10px;
+    }
+
+    .right-popup-section {
+        border: 5px solid #206294;
+        min-height: 400px;
+        border-left: 0px;
+        padding-top: 20px;
+        min-height: 400px;
+    }
+
+    .subremodal-form-group-popup {
+        display: block;
+        float: left;
+        padding-top: 2px !important;
+        padding-bottom: 2px !important;
+    }
+
+    .form-row {
+        display: block;
+        float: left;
+        width: 100%;
+        padding-top: 10px;
+    }
+
+    .custom-popup-label-group {
+        display: block;
+        float: left;
+        width: 100px !important;
+        margin-top: 5px;
+        text-align: left;
+    }
+
+    .custom-popup-input-group {
+        display: block;
+        float: left;
+        width: 300px !important;
+    }
+
+    .form-control-date {
+        width: 100px !important;
+    }
+
+    .field-group {
+        width: 270px !important;
+    }
+
+    #dataListBrand th {
+        text-align: center !important;
+        display: block;
+    }
+
+    #dataListBrand_th_1 {
+        float: left;
+        width: 15% !important;
+    }
+
+    #dataListBrand_th_2 {
+        float: left;
+        width: 40% !important;
+    }
+
+    #dataListBrand_th_link {
+        float: left;
+        width: 17% !important;
+    }
+
+    #dataListBrand td.DTCOL_CODE {
+        float: left;
+        text-align: left !important;
+        width: 20% !important;
+    }
+
+    #dataListBrand td.DTCOL_BRAND {
+        float: left;
+        text-align: left !important;
+        width: 45% !important;
+    }
+
+    #dataListBrand td.DTCOL_ACTION {
+        float: left;
+        text-align: left !important;
+        width: 17% !important;
+    }
+
+    // -->
+</style>

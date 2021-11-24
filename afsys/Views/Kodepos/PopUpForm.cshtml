@@ -1,0 +1,141 @@
+﻿<form role="form" method="POST" id="masterPopupForm" mode="@ViewBag.modify_status" onsubmit="event.preventDefault();">
+    <div class="form-group-popup-header">
+        <label class="popup-label-group-title">Kodepos Form</label>
+        <input type="hidden" name="AUTONUMBER" id="AUTONUMBER" dataType="autonumber" dataKey="1" value="@ViewBag.autonumber" />
+        <input type="hidden" dataType="string" dataKey="0" name="POPUP_OBJECT_ID" value="kodepos" nosave />
+        <input type="hidden" dataType="string" dataKey="0" name="POPUP_TOP_OBJECT_ID" value="" nosave />
+        <input type="hidden" dataType="string" dataKey="0" name="POPUP_TOP_FIELD_NAME" value="" nosave />
+    </div>
+    <div class="form-content-group-popup">
+        <div class="form-content-group-popup-detail">
+            <div class="popup-section @ViewBag.layoutCSS">
+                <div class="form-group-popup">
+                    <div class="form-group-popup">
+                        <label class="popup-label-group-col-md-6 popup-label-item">Propinsi</label>
+                        <div class="popup-input-group-col-md-6">
+                            <select name="PROPINSI_ID" id="propinsi_id" placeholder="select..." data-mandatory="true" dataType="string" validation-string="Type" class="form-control popup-select-group" nosave>
+                                @Html.Raw(ViewBag.listPropinsi)
+                            </select>
+                            <a href="javascript:openPopupForm('propinsi','subremodalform','subremodal','')" class="form-control new-value-group"><i class="fa fa-plus fa-plus-new-value-group"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group-popup">
+                    <div class="form-group-popup">
+                        <label class="popup-label-group-col-md-6 popup-label-item">Kabupaten</label>
+                        <div class="popup-input-group-col-md-6">
+                            <select name="KABUPATEN_ID" id="kabupaten_id" placeholder="select..." data-mandatory="true" dataType="string" validation-string="Type" class="form-control popup-select-group" nosave>
+                                @Html.Raw(ViewBag.listKabupaten)
+                            </select>
+                            <a href="javascript:preopenPopupForm('kabupaten')" class="form-control new-value-group"><i class="fa fa-plus fa-plus-new-value-group"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group-popup">
+                    <div class="form-group-popup">
+                        <label class="popup-label-group-col-md-6 popup-label-item">Kecamatan</label>
+                        <div class="popup-input-group-col-md-6">
+                            <select name="KECAMATAN_ID" id="kecamatan_id" placeholder="select..." data-mandatory="true" dataType="string" validation-string="Type" class="form-control popup-select-group">
+                                @Html.Raw(ViewBag.listKecamatan)
+                            </select>
+                            <a href="javascript:preopenPopupForm('kecamatan')" class="form-control new-value-group"><i class="fa fa-plus fa-plus-new-value-group"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group-popup">
+                    <label class="popup-label-group-col-md-6 popup-label-item">Kelurahan</label>
+                    <div class="popup-input-group-col-md-6">
+                        <input id="kelurahan" class="form-control" data-mandatory="true" dataType="string" dataKey="0" maxlength="200" validation-string="Kelurahan" name="KELURAHAN" value="@ViewBag.kelurahan">
+                        <div class="kelurahan validation-result" style="display: none;"></div>
+                    </div>
+                </div>
+                <div class="form-group-popup">
+                    <label class="popup-label-group-col-md-6 popup-label-item">Kodepos</label>
+                    <div class="popup-input-group-col-md-6">
+                        <input id="kodepos" class="form-control" data-mandatory="true" dataType="string" dataKey="0" maxlength="10" validation-string="Kodepos" name="KODEPOS" value="@ViewBag.kodepos" >
+                        <div class="kodepos validation-result" style="display: none;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group-popup-footer">
+        <input type="hidden" dataType="string" name="MODIFY_STATUS" value="@ViewBag.modify_status" nosave>
+        <button data-remodal-action="confirm" id="remodal-confirm" class="remodal-confirm">SIMPAN</button>
+        <button data-remodal-action="cancel" id="remodal-cancel" class="remodal-cancel">TUTUP</button>
+        <button id="remodal-end" class="remodal-end"></button>
+    </div>
+</form>
+
+<style>
+    <!--
+
+    .popup-label-item {
+        width:22%!important;
+    }
+
+    .remodal {
+        width: 600px !important;
+    }
+
+    .remodal-wrapper {
+        top: -5%;
+    }
+
+    .popup-section {
+        border: 5px solid #206294;
+        min-height: 425px;
+        padding-top: 10px;
+    }
+
+    .extend-layout {
+        min-height:390px!important;
+    }
+
+    .remodal-form-group-popup {
+        display: block;
+        float: left;
+        padding-top: 2px !important;
+        padding-bottom: 2px !important;
+    }
+
+    .form-row {
+        display: block;
+        float: left;
+        width: 100%;
+        padding-top: 10px;
+    }
+
+    .custom-popup-label-group {
+        display: block;
+        float: left;
+        width: 100px !important;
+        margin-top: 5px;
+        text-align: left;
+    }
+
+    .custom-popup-input-group {
+        display: block;
+        float: left;
+        width: 300px !important;
+    }
+
+    .form-control-date {
+        width: 100px !important;
+    }
+
+    .field-group {
+        width: 270px !important;
+    }
+
+    .new-value-group {
+        height: 32px!important;
+    }
+
+    #discountinue {
+        width:75px;
+    }
+
+    // -->
+</style>
+

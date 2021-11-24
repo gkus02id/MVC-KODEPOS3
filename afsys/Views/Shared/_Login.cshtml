@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>KODEPOS</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    
+    <link rel="stylesheet" type="text/css" href="~/plugins/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/plugins/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/plugins/ionicons/css/ionicons.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/AdminLTE.min.css" />
+    <link rel="stylesheet" type="text/css" href="/plugins/toastr/toastr.min.css" />
+    <link rel="stylesheet" type="text/css" href="/plugins/iCheck/square/blue.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/jquery-confirm.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/remodal.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/subremodal.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/delremodal.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/cremodal.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/cfremodal.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/remodal-default-theme.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/subremodal-default-theme.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/delremodal-default-theme.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/cremodal-default-theme.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/cfremodal-default-theme.css" />
+
+</head>
+<body class="hold-transition login-page">
+    <div class="loader hide-layout"></div>
+    <div class="login-box">
+        <div class="login-logo">
+        </div><!-- /.login-logo -->
+        <div class="login-box-body">
+            @RenderBody()
+        </div><!-- /.login-box-body -->
+    </div><!-- /.login-box -->
+    <!-- jQuery 2.1.4 -->
+
+    <script language="javascript" src="/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <script language="javascript" src="/plugins/toastr/toastr.js"></script>
+    <script language="javascript" src="/assets/js/fn-login.js"></script>
+    <script language="javascript" src="/assets/js/core-common.js"></script>
+    <script language="javascript" src="/assets/js/jquery-confirm.min.js"></script>
+    <script language="javascript" src="/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script language="javascript" src="/assets/js/core_remodal.js"></script>
+    <script language="javascript" src="/assets/js/remodal.js"></script>
+    <script language="javascript" src="/assets/js/subremodal.js"></script>
+    <script language="javascript" src="/assets/js/delremodal.js"></script>
+    <script language="javascript" src="/assets/js/cremodal.js"></script>
+    <script language="javascript" src="/assets/js/cfremodal.js"></script>
+
+    <script>
+      $(function () {
+        $('input').iCheck({
+          checkboxClass: 'icheckbox_square-blue',
+          radioClass: 'iradio_square-blue',
+          increaseArea: '20%' // optional
+        });
+
+        $("#username").focus();
+
+      });
+    </script>
+
+    <div class="remodal" data-remodal-id="remodalform" role="dialog" aria-labelledby="modal1Title" aria-describedby="modal1Desc" data-remodal-options="hashTracking: false, closeOnConfirm: false, closeOnEscape: false, closeOnOutsideClick: false">
+        <div class="panel-body" id="content-remodal">
+        </div>
+    </div>
+
+    <div class="delremodal" data-delremodal-id="delremodalform" role="dialog" aria-labelledby="modal1Title" aria-describedby="modal1Desc" data-delremodal-options="hashTracking: false, closeOnConfirm: false, closeOnEscape: false, closeOnOutsideClick: false">
+        <div class="panel-body" id="content-delremodal">
+        </div>
+    </div>
+
+    <div class="cfremodal" data-cfremodal-id="cfremodalform" role="dialog" aria-labelledby="modal1Title" aria-describedby="modal1Desc" data-delremodal-options="hashTracking: false, closeOnConfirm: false, closeOnEscape: false, closeOnOutsideClick: false">
+        <div class="panel-body" id="content-cfremodal">
+        </div>
+    </div>
+
+    <div class="cremodal" data-cremodal-id="cremodalform" role="dialog" aria-labelledby="modal1Title" aria-describedby="modal1Desc" data-cremodal-options="hashTracking: false, closeOnConfirm: false, closeOnEscape: false, closeOnOutsideClick: false">
+        <div class="panel-body" id="content-cremodal">
+        </div>
+    </div>
+
+    <div class="subremodal" data-subremodal-id="subremodalform" role="dialog" aria-labelledby="modal2Title" aria-describedby="modal2Desc" data-subremodal-options="hashTracking: false, closeOnConfirm: false, closeOnEscape: false, closeOnOutsideClick: false">
+        <div class="panel-body" id="content-subremodal">
+        </div>
+    </div>
+
+    <div id="core_sys_loader" class="core_sys_loader hide-layout">
+        <div class="container_sys_loader">
+            <div class="content_sys_loader">
+                <div class="circle_sys_loader"></div>
+                <div class="circle1_sys_loader"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

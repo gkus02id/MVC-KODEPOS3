@@ -1,0 +1,402 @@
+/*
+ *  cfremodal - v1.1.1
+ *  Responsive, lightweight, fast, synchronized with CSS animations, fully customizable modal window plugin with declarative configuration and hash tracking.
+ *  http://vodkabears.github.io/cfremodal/
+ *
+ *  Made by Ilya Makarov
+ *  Under MIT License
+ */
+
+/* ==========================================================================
+   cfremodal's default mobile first theme
+   ========================================================================== */
+
+/* Default theme styles for the background */
+
+.cfremodal-bg.cfremodal-is-opening, 
+.cfremodal-bg.cfremodal-is-opened {
+  -webkit-filter: blur(3px);
+  filter: blur(3px);
+}
+
+/* Default theme styles of the overlay */
+
+.cfremodal-overlay {
+  background: rgba(43, 46, 56, 0.9);
+}
+
+.cfremodal-overlay.cfremodal-is-opening,
+.cfremodal-overlay.cfremodal-is-closing {
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.cfremodal-overlay.cfremodal-is-opening {
+  -webkit-animation-name: cfremodal-overlay-opening-keyframes;
+  animation-name: cfremodal-overlay-opening-keyframes;
+}
+
+.cfremodal-overlay.cfremodal-is-closing {
+  -webkit-animation-name: cfremodal-overlay-closing-keyframes;
+  animation-name: cfremodal-overlay-closing-keyframes;
+}
+
+/* Default theme styles of the wrapper */
+
+.cfremodal-wrapper {
+  padding: 10px 10px 0;
+  overflow:hidden;
+  transform:scale(1);
+}
+
+/* Default theme styles of the modal dialog */
+
+.cfremodal {
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 10px;
+ 
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+
+  color: #2b2e38;
+  background: #fff;
+}
+
+.cfremodal.cfremodal-is-opening,
+.cfremodal.cfremodal-is-closing {
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.cfremodal.cfremodal-is-opening {
+  -webkit-animation-name: cfremodal-opening-keyframes;
+  animation-name: cfremodal-opening-keyframes;
+}
+
+.cfremodal.cfremodal-is-closing {
+  -webkit-animation-name: cfremodal-closing-keyframes;
+  animation-name: cfremodal-closing-keyframes;
+}
+
+/* Vertical align of the modal dialog */
+
+.cfremodal,
+.cfremodal-wrapper:after {
+  vertical-align: middle;
+}
+
+/* Close button */
+
+.cfremodal-close {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: block;
+  overflow: visible;
+
+  width: 35px;
+  height: 35px;
+  margin: 0;
+  padding: 0;
+
+  cursor: pointer;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+  text-decoration: none;
+
+  color: #95979c;
+  border: 0;
+  outline: 0;
+  background: transparent;
+}
+
+.cfremodal-close:hover,
+.cfremodal-close:focus {
+  color: #2b2e38;
+}
+
+.cfremodal-close:before {
+  font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif !important;
+  font-size: 25px;
+  line-height: 35px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: block;
+
+  width: 35px;
+
+  content: "\00d7";
+  text-align: center;
+}
+
+/* Dialog buttons */
+
+.cfremodal-confirm,
+.cfremodal-cancel {
+  font: inherit;
+
+  display: inline-block;
+  overflow: visible;
+
+  min-width: 110px;
+  margin: 0;
+  padding: 6px 0;
+
+  cursor: pointer;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+
+  border: 0;
+  outline: 0;
+}
+
+.cfremodal-confirm {
+  color: #fff;
+  background: #4b4b4b;
+  border: #4b4b4b 1px solid;
+}
+
+.cfremodal-confirm:hover,
+.cfremodal-confirm:focus {
+  color: #000!important;
+  background: #fff!important;
+}
+
+.cfremodal-cancel {
+  color: #fff;
+  background: #4b4b4b;
+  border: #4b4b4b 1px solid;
+}
+
+.cfremodal-cancel:hover,
+.cfremodal-cancel:focus {
+  color: #000!important;
+  background: #fff!important;
+}
+
+/* Remove inner padding and border in Firefox 4+ for the button tag. */
+
+.cfremodal-confirm::-moz-focus-inner,
+.cfremodal-cancel::-moz-focus-inner,
+.cfremodal-close::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+/* Keyframes
+   ========================================================================== */
+
+@-webkit-keyframes cfremodal-opening-keyframes {
+  from {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: none;
+    transform: none;
+
+    opacity: 1;
+
+    -webkit-filter: blur(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes cfremodal-opening-keyframes {
+  from {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: none;
+    transform: none;
+
+    opacity: 1;
+
+    -webkit-filter: blur(0);
+    filter: blur(0);
+  }
+}
+
+@-webkit-keyframes cfremodal-closing-keyframes {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+
+    opacity: 0;
+
+    -webkit-filter: blur(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes cfremodal-closing-keyframes {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+
+    opacity: 0;
+
+    -webkit-filter: blur(0);
+    filter: blur(0);
+  }
+}
+
+@-webkit-keyframes cfremodal-overlay-opening-keyframes {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes cfremodal-overlay-opening-keyframes {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes cfremodal-overlay-closing-keyframes {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes cfremodal-overlay-closing-keyframes {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Media queries
+   ========================================================================== */
+
+@media only screen and (min-width: 641px) {
+  .cfremodal {
+    max-width: 700px;
+  }
+}
+
+/* IE8
+   ========================================================================== */
+
+.lt-ie9 .cfremodal-overlay {
+  background: #2b2e38;
+}
+
+.lt-ie9 .cfremodal {
+  width: 700px;
+}
+
+/*
+    Custom Layout
+*/
+
+label.popup-label-group {
+    display:inline-table!important;
+    width:20%!important;
+    text-align:left!important;
+    vertical-align:top;
+    margin-top:4px;
+}
+
+div.popup-input-group {
+    display:inline-table!important;
+    width: 79%!important;
+    text-align:left!important;
+}
+
+label.popup-label-group-30 {
+    display:inline-table!important;
+    width:30%!important;
+    text-align:left!important;
+    vertical-align:top;
+    margin-top:4px;
+}
+
+div.popup-input-group-30 {
+    display:inline-table!important;
+    width: 69%!important;
+    text-align:left!important;
+}
+
+.popup-select-group {
+    /*display:inline-table!important;*/
+    text-align:left;
+    width:90%;
+    float:left;
+}
+
+.new-value-group {
+    display:inline-table!important;
+    text-align:left!important;
+    width:6%!important;
+    margin-left:2px;
+    cursor:pointer;
+}
+
+.cfremodal-bg {
+    cursor:pointer;
+}
+
+.popup-label-group-title {
+    font-size:16pt;
+    font-weight:bold;
+    width:100%!important;
+    text-align:center!important;
+}
+
+.form-group-popup {
+    padding-top:2px!important;
+    padding-bottom:2px!important;
+}
+
+.form-group-popup-header {
+    padding-bottom:4px!important;
+}
+
+.form-group-popup-footer {
+    padding-top:10px!important;
+}
+
+.hide-element {
+    visibility:hidden!important;
+}

@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@Html.Raw(ViewBag.app_name)</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="referrer" content="no-referrer" />
+
+    <link rel="stylesheet" type="text/css" href="~/plugins/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/plugins/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/plugins/ionicons/css/ionicons.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/plugins/jQueryUI/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/AdminLTE.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/plugins/toastr/toastr.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/jquery-confirm.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/skins/skin-black.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/selectize.default.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/selectize.bootstrap2.css" />
+    <link rel="stylesheet" type="text/css" href="~/plugins/morris/morris.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/plugins/spinner/css/iosOverlay.css" />
+    <link rel="stylesheet" type="text/css" href="~/plugins/datepicker/css/datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/remodal.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/subremodal.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/sub2remodal.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/sub3remodal.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/delremodal.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/cremodal.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/cfremodal.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/printremodal.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/remodal-default-theme.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/subremodal-default-theme.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/sub2remodal-default-theme.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/sub3remodal-default-theme.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/delremodal-default-theme.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/cremodal-default-theme.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/cfremodal-default-theme.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/printremodal-default-theme.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/core_remodal.css" />
+    <link rel="stylesheet" type="text/css" href="~/plugins/jupload/css/uploadfile.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="~/plugins/jconfirm/css/jquery-confirm.css" />
+
+    <script language="javascript">
+    <!--
+        var jsBaseUrl = "@ViewBag.root_url";
+    //-->
+    </script>
+
+    <script language="javascript" src="~/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <script language="javascript" src="~/plugins/jQueryUI/jquery-ui.min.js"></script>
+    <script language="javascript" src="~/plugins/toastr/toastr.js"></script>
+    <script language="javascript" src="~/assets/js/main_menu.js"></script>
+    <script language="javascript" src="~/assets/js/core-common.js"></script>
+    <script language="javascript" src="~/assets/js/jquery-confirm.min.js"></script>
+    <script language="javascript" src="~/assets/js/core_dataaccess.js"></script>
+    <script language="javascript" src="~/assets/js/numeral.min.js"></script>
+    <script language="javascript" src="~/assets/js/jquery.transit.min.js"></script>
+    <script language="javascript" src="~/assets/js/remodal.js"></script>
+    <script language="javascript" src="~/assets/js/subremodal.js"></script>
+    <script language="javascript" src="~/assets/js/sub2remodal.js"></script>
+    <script language="javascript" src="~/assets/js/sub3remodal.js"></script>
+    <script language="javascript" src="~/assets/js/delremodal.js"></script>
+    <script language="javascript" src="~/assets/js/cremodal.js"></script>
+    <script language="javascript" src="~/assets/js/cfremodal.js"></script>
+    <script language="javascript" src="~/assets/js/printremodal.js"></script>
+    <script language="javascript" src="~/assets/js/core_remodal.js"></script>
+    <script language="javascript" src="~/assets/js/core_datatable.js"></script>
+    <script language="javascript" src="~/plugins/jupload/js/jquery.uploadfile.min.js"></script>
+    <script language="javascript" src="~/plugins/jconfirm/js/jquery-confirm.js"></script>
+</head>
+<body class="hold-transition skin-black sidebar-mini sidebar-collapse">
+    <div id="sys-default-menu" style="display:none!important" default-menu="@ViewBag.user_default_menu"></div>
+    <div class="wrapper">
+
+        <!-- Main Header -->
+        <header class="main-header ">
+            <!-- Logo -->
+            <a href="index2.html" class="logo" style="display: none;">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>gS</b></span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><img src="~/assets/images/greenslutions-logo.png" alt="System Image"></span>
+            </a>
+
+            <!-- Header Navbar -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <!-- Navbar Right Menu -->
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- User Account Menu -->
+                        <li id="profile-user-menu" class="dropdown user user-menu">
+                            <!-- Menu Toggle Button -->
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <!-- The user image in the navbar-->
+
+                                <img src="~/assets/images/@ViewBag.user_avatar" class="user-image" alt="User Image">
+                                <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                                <span class="hidden-xs">@ViewBag.username</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- The user image in the menu -->
+                                <li class="user-header">
+                                    <img src="~/assets/images/@ViewBag.user_avatar" class="img-circle" alt="User Image">
+                                    <p>
+                                        @ViewBag.username
+                                    </p>
+                                </li>
+                                <!-- Menu Body -->
+                                <li class="user-body">
+                                    <div class="col-xs-4 text-center">
+                                        &nbsp;
+                                    </div>
+                                </li>
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="logout" class="btn btn-default btn-flat">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Control Sidebar Toggle Button -->
+                        <li>
+                            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+
+                <!-- Sidebar user panel (optional) -->
+                <div class="user-panel">
+                    <div class="pull-left image">
+                        <img src="~/assets/images/@ViewBag.user_avatar" class="img-circle" alt="User Image">
+                    </div>
+                    <div class="pull-left info">
+                        <!-- Status -->
+                        <p>@ViewBag.username</p>
+                        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                    </div>
+                </div>
+
+                <!-- search form (Optional) -->
+                <form action="#" method="get" class="sidebar-form">
+                    <div class="input-group">
+                        <input type="text" name="q" class="form-control" placeholder="Search...">
+                        <span class="input-group-btn">
+                            <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </form>
+                <!-- /.search form -->
+                <!-- Sidebar Menu -->
+                <ul class="sidebar-menu" style="font-size:14px;">
+                    <li class="header">Application Menu</li>
+                    <!-- Optionally, you can add icons to the links -->
+                </ul><!-- /.sidebar-menu -->
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper" id="content-wrapper-global">
+            @RenderBody()
+        </div><!-- /.content-wrapper -->
+
+        <div class="remodal" data-remodal-id="remodalform" role="dialog" aria-labelledby="modal1Title" aria-describedby="modal1Desc" data-remodal-options="hashTracking: false, closeOnConfirm: false, closeOnEscape: false, closeOnOutsideClick: false">
+            <div class="panel-body-popup" id="content-remodal">
+            </div>
+        </div>
+
+        <div class="delremodal" data-delremodal-id="delremodalform" role="dialog" aria-labelledby="modal1Title" aria-describedby="modal1Desc" data-delremodal-options="hashTracking: false, closeOnConfirm: false, closeOnEscape: false, closeOnOutsideClick: false">
+            <div class="panel-body-popup" id="content-delremodal">
+            </div>
+        </div>
+
+        <div class="printremodal" data-printremodal-id="printremodalform" role="dialog" aria-labelledby="modal1Title" aria-describedby="modal1Desc" data-printremodal-options="hashTracking: false, closeOnConfirm: false, closeOnEscape: false, closeOnOutsideClick: false">
+            <div class="panel-body-popup" id="content-printremodal">
+            </div>
+        </div>
+
+        <div class="cremodal" data-cremodal-id="cremodalform" role="dialog" aria-labelledby="modal1Title" aria-describedby="modal1Desc" data-cremodal-options="hashTracking: false, closeOnConfirm: false, closeOnEscape: false, closeOnOutsideClick: false">
+            <div class="panel-body-popup" id="content-cremodal">
+            </div>
+        </div>
+
+        <div class="cfremodal" data-cfremodal-id="cfremodalform" role="dialog" aria-labelledby="modal1Title" aria-describedby="modal1Desc" data-cremodal-options="hashTracking: false, closeOnConfirm: false, closeOnEscape: false, closeOnOutsideClick: false">
+            <div class="panel-body-popup" id="content-cfremodal">
+            </div>
+        </div>
+
+        <div class="subremodal" data-subremodal-id="subremodalform" role="dialog" aria-labelledby="modal2Title" aria-describedby="modal2Desc" data-subremodal-options="hashTracking: false, closeOnConfirm: false, closeOnEscape: false, closeOnOutsideClick: false">
+            <div class="panel-body-popup" id="content-subremodal">
+            </div>
+        </div>
+
+        <div class="sub2remodal" data-sub2remodal-id="sub2remodalform" role="dialog" aria-labelledby="modal2Title" aria-describedby="modal2Desc" data-sub2remodal-options="hashTracking: false, closeOnConfirm: false, closeOnEscape: false, closeOnOutsideClick: false">
+            <div class="panel-body-popup" id="content-sub2remodal">
+            </div>
+        </div>
+
+        <div class="sub3remodal" data-sub3remodal-id="sub3remodalform" role="dialog" aria-labelledby="modal2Title" aria-describedby="modal2Desc" data-sub3remodal-options="hashTracking: false, closeOnConfirm: false, closeOnEscape: false, closeOnOutsideClick: false">
+            <div class="panel-body-popup" id="content-sub3remodal">
+            </div>
+        </div>
+
+        <div id="core_sys_loader" class="core_sys_loader hide-layout">
+            <div class="container_sys_loader">
+                <div class="content_sys_loader">
+                    <div class="circle_sys_loader"></div>
+                    <div class="circle1_sys_loader"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <!-- To the right -->
+            <div class="pull-right hidden-xs">
+
+            </div>
+            <!-- Default to the left -->
+            <strong>Copyright &copy; 2021 <a href="#">demo</a>.</strong> All rights reserved.
+        </footer>
+    </div><!-- ./wrapper -->
+
+    <div style="display:none!important">
+        <form name="formcorenavigation" id="formcorenavigation" action="/" method="post" target="_blank">
+            <input type="hidden" name="SYS_PARAM_MENU" id="SYS_PARAM_MENU" value="" />
+            <input type="hidden" name="SYS_PARAM_REQ" id="SYS_PARAM_REQ" value="" />
+        </form>
+    </div>
+
+    <input type="hidden" name="root_url" id="root_url" value="@ViewBag.root_url" />
+    
+
+    <!-- Bootstrap 3.3.5 -->
+
+    <script language="javascript" src="~/plugins/bootstrap/js/bootstrap.js"></script>
+    <script language="javascript" src="~/assets/js/app.min.js"></script>
+    <script language="javascript" src="~/assets/js/custom_footer.js"></script>
+    <script language="javascript" src="~/plugins/datepicker/js/bootstrap-datepicker.js"></script>
+    <script language="javascript" src="~/assets/js/selectize.js"></script>
+    <script language="javascript" src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script language="javascript" src="~/plugins/datatables/dataTables.bootstrap.min.js"></script>
+    <script language="javascript" src="~/plugins/raphael/raphael-min.js"></script>
+    <script language="javascript" src="~/plugins/morris/morris.min.js"></script>
+
+    <script language="javascript">
+
+        @if (ViewBag.sys_param_menu != "")
+        {
+            @: fnLoadingFormWithParam("@ViewBag.sys_param_menu", "@ViewBag.sys_param_req");
+        }
+
+        document.body.style.zoom = "@ViewBag.percent_zoom_layout";
+    </script>
+</body>
+</html>
+

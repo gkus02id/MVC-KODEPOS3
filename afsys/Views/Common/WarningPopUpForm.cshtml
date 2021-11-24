@@ -1,0 +1,41 @@
+﻿<button data-remodal-action="close" class="remodal-close"></button>
+<form role="form" method="POST" id="masterPopupForm" onsubmit="event.preventDefault();">
+    <div class="form-group-popup-header">
+        <label class="popup-label-group-title" id="masterPopupForm">Record Locked</label>
+        <input type="hidden" dataType="string" dataKey="0" name="POPUP_OBJECT_ID" value="" nosave />
+        <input type="hidden" dataType="string" dataKey="0" name="POPUP_TOP_OBJECT_ID" value="" nosave />
+        <input type="hidden" dataType="string" dataKey="0" name="POPUP_TOP_FIELD_NAME" value="" nosave />
+    </div>
+    <div class="form-content-group-popup">
+        <div class="form-content-group-popup-detail">
+            <div class="form-group-popup">
+                <label class="popup-label-group">User</label>
+                <div class="popup-input-group">
+                    @ViewBag.locked_by
+                </div>
+            </div>
+            <div class="form-group-popup">
+                <label class="popup-label-group">Date</label>
+                <div class="popup-input-group">
+                    @ViewBag.locked_date
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group-popup-footer">
+        <button data-remodal-action="cancel" id="remodal-cancel" class="remodal-cancel">Close</button>
+    </div>
+</form>
+
+<style>
+    <!--
+    .remodal {
+        width: 500px !important;
+    }
+
+    .remodal-close {
+        left: 92%;
+    }
+    // -->
+</style>
+
